@@ -1,15 +1,15 @@
 # Architecture Benchmarking
 
-> A "for-fun" repo made to explore . as well as performance difference between C, a compiled language against Python, an interpreted language.
+> Thought I'd brush up on basic computer architecture concepts. This repo explores cache locality and overhead by comparing speed differences when accessing array values row-by-row, col-by-col, or random access. Also, this compares loop performance difference between C, a compiled language against Python, an interpreted language.
 
 # Instructions to Run
 To compile the C files:
-- `c_cache_benchmark.c`
+- `cache_benchmark.c`
 - `c_loop_benchmark.c`
 
-Simply run the Makefile through `make`, which will compile both files into executables, in which they can be ran using:
+Simply run the Makefile through `make setup_all`, which will compile both files into executables, in which they can be ran using:
 ```
-./c_cache_benchmark.exe
+./cache_benchmark.exe
 ./c_loop_benchmark.exe
 ```
 
@@ -18,7 +18,7 @@ For the Python file, run
 python python_loop_benchmark.py
 ```
 
-Additionally, `make run all` will compile, run the executables along with the Python script, and cleanup afterwards. 
+Additionally, simply running `make` will compile, run the executables + Python script, and clean up the executables. 
 
 # My Benchmark Results
 

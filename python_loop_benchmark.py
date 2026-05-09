@@ -14,9 +14,5 @@ def perform_arithmetic():
     time_taken: float = float(end_time - start_time)
     print(f"Time Taken: {time_taken}")
     
-
-def main():
-    perform_arithmetic()
-
 if __name__ == "__main__":
-    main()
+    perform_arithmetic()

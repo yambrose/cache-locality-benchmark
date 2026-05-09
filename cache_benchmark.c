@@ -23,7 +23,7 @@ void FillArray() {
 }
 
 
-void SequentialAccess(int **arr) {
+void SequentialAccess() {
 
     clock_gettime(CLOCK_MONOTONIC, &startTime);
 
@@ -36,10 +36,10 @@ void SequentialAccess(int **arr) {
     clock_gettime(CLOCK_MONOTONIC, &endTime);
     double timeTaken = (endTime.tv_sec - startTime.tv_sec) +
                     (endTime.tv_nsec - startTime.tv_nsec) / 1e9;
-    printf("Sequential Access: Sum = %d, Time taken = %f seconds\n", sum, timeTaken);
+    printf("Sequential Access: Sum = %d, Time taken = %.16f seconds\n", sum, timeTaken);
 }
 
-void StridedAccess(int **arr) {
+void StridedAccess() {
     clock_gettime(CLOCK_MONOTONIC, &startTime);
     int sum = 0;
     for (int i = 0; i < rows; i++) {
@@ -50,10 +50,10 @@ void StridedAccess(int **arr) {
     clock_gettime(CLOCK_MONOTONIC, &endTime);
     double timeTaken = (endTime.tv_sec - startTime.tv_sec) +
                     (endTime.tv_nsec - startTime.tv_nsec) / 1e9;
-    printf("Strided Access: Sum = %d, Time taken = %f seconds\n", sum, timeTaken);
+    printf("Strided Access: Sum = %d, Time taken = %.16f seconds\n", sum, timeTaken);
 }
 
-void RandomAccess(int **arr) {
+void RandomAccess() {
     clock_gettime(CLOCK_MONOTONIC, &startTime);
     int sum = 0;
     for (int i = 0; i < rows; i++) {
@@ -64,14 +64,14 @@ void RandomAccess(int **arr) {
     clock_gettime(CLOCK_MONOTONIC, &endTime);
     double timeTaken = (endTime.tv_sec - startTime.tv_sec) +
                     (endTime.tv_nsec - startTime.tv_nsec) / 1e9;
-    printf("Random Access: Sum = %d, Time taken = %f seconds\n", sum, timeTaken);
+    printf("Random Access: Sum = %d, Time taken = %.16f seconds\n", sum, timeTaken);
 }
 
 int main() {
     FillArray();
-    SequentialAccess(array);
-    StridedAccess(array);
-    RandomAccess(array);
+    SequentialAccess();
+    StridedAccess();
+    RandomAccess();
 
     return 0;
 }
