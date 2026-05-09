@@ -1,4 +1,4 @@
-#define TRIALS 5;
+#define TRIALS 5
 
 #include <stdio.h>  
 #include <stdlib.h> 
@@ -9,7 +9,7 @@ long long length = 2048 * 2048;
 
 struct timespec startTime, endTime;
 
-float PerformArithmetic() {
+float PerformArithmetic(int trial) {
     clock_gettime(CLOCK_MONOTONIC, &startTime);
 
     long long total = 1;
@@ -21,7 +21,7 @@ float PerformArithmetic() {
     
     float timeTaken = (endTime.tv_sec - startTime.tv_sec) +
                     (endTime.tv_nsec - startTime.tv_nsec) / 1e9;
-    printf("Time taken = %.16f seconds, total = %lld\n",  timeTaken, total);
+    printf("Trial %d, Time taken = %.16f seconds, total = %lld\n", trial, timeTaken, total);
 
     return timeTaken;
 }
