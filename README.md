@@ -1,4 +1,4 @@
-# Architecture Benchmarking
+# Cache Locality Benchmarking
 
 > Thought I'd brush up on basic computer architecture concepts. This repo explores cache locality and overhead by comparing speed differences when accessing array values row-by-row, col-by-col, or random access. Also, this compares loop performance difference between C, a compiled language against Python, an interpreted language.
 
