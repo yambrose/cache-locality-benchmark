@@ -24,4 +24,4 @@ if __name__ == "__main__":
     for trial in range(1, trials + 1):
         total_time_taken += perform_arithmetic(trial)
     
-    print("Pyton Loop Average: {total_time_taken} seconds.")
+    print(f"Pyton Loop Average: {total_time_taken / trial} seconds.")

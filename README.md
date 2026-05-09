@@ -31,18 +31,18 @@ Random Access Average: Time taken = 0.0533745177090168 seconds
 
 C Loop Benchmark (Avg. of 5 Trials):
 ```
-Time taken = 0.0003729000000000
+C Loop Average: 0.0021920199505985 seconds
 ```
 
 Python Loop Benchmark (Avg. of 5 Trials):
 ```
-Time Taken: 0.6427855000001728
+Pyton Loop Average: 0.7027373000004445 seconds.
 ```
 
 # Discussion
 
-Interpreting the C Cache Benchmark, it appears that sequential access is the fastest with an average of ~0.0004 seconds, travelling row by row is faster because it uses the entire cache line and takes advantage of spatial locality, resulting in more cache hits. In comparison, strided access accesses a new cache line every time, resulting in more cache misses, requiring refetching from a lower level cache or the RAM (RAM has 100+ cycles of delay so that is undesireable). The random access has the same issue, but even worse because is isn't predictable with non-fixed strides for each new iteration. Therefore being slower than both sequential and strided access.
+Interpreting the C Cache Benchmark, it appears that sequential access is the fastest with an average of ~0.00054 seconds, travelling row by row is faster because it uses the entire cache line and takes advantage of spatial locality, resulting in more cache hits. In comparison, strided access accesses a new cache line every time, resulting in more cache misses, requiring refetching from a lower level cache or the RAM (RAM has 100+ cycles of delay so that is undesireable). The random access has the same issue, but even worse because is isn't predictable with non-fixed strides for each new iteration. Therefore being slower than both sequential and strided access.
 
-For the looping benchmarks, C code is considerably faster than Python code (~1723 times faster) because C directly compiles to machine code, while Python requires interpretation, and rather than compiling into pure machine code. It uses CPython to compile source to bytecode, then the interpreter executes the bytecode. Overall, Python code has much more overhead, causing slowdowns and becomes significantly slower than C.
+For the looping benchmarks, C code is considerably faster than Python code (~334.6 times faster) because C directly compiles to machine code, while Python requires interpretation, and rather than compiling into pure machine code. It uses CPython to compile source to bytecode, then the interpreter executes the bytecode. Overall, Python code has much more overhead, causing slowdowns and becomes significantly slower than C.
 
 In a Raspberry Pi, since it has a weaker CPU and smaller RAM, it is important to use best practices such as sequential accesses when traversing in loops, for rapid calculation tasks, it is good to use a compiled language, which is why instead of using pure Python for calculation, a library such as NumPy or PyTorch may be used.
