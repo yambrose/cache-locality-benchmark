@@ -25,9 +25,9 @@ void SequentialAccess() {
 
     clock_gettime(CLOCK_MONOTONIC, &startTime);
 
-    int sum = 0;
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
+    long long sum = 0;
+    for (long long i = 0; i < rows; i++) {
+        for (long long j = 0; j < cols; j++) {
             sum += array[i][j];
         }
     }
@@ -39,9 +39,9 @@ void SequentialAccess() {
 
 void StridedAccess() {
     clock_gettime(CLOCK_MONOTONIC, &startTime);
-    int sum = 0;
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
+    long long sum = 0;
+    for (long long i = 0; i < rows; i++) {
+        for (long long j = 0; j < cols; j++) {
             sum += array[j][i];
         }
     }
@@ -53,9 +53,9 @@ void StridedAccess() {
 
 void RandomAccess() {
     clock_gettime(CLOCK_MONOTONIC, &startTime);
-    int sum = 0;
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
+    long long sum = 0;
+    for (long long i = 0; i < rows; i++) {
+        for (long long j = 0; j < cols; j++) {
             sum += array[rand() % rows][rand() % cols];
         }
     }
