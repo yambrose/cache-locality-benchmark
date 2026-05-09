@@ -18,8 +18,6 @@ void FillArray() {
             array[i][j] = rand() % 10;
         }
     }
-
-    printf("%d\n", array[2]);
 }
 
 
