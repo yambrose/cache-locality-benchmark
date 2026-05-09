@@ -13,7 +13,7 @@ def perform_arithmetic(trial: int) -> float:
     end_time: float = perf_counter()
     
     time_taken: float = float(end_time - start_time)
-    print(f"TRIAL {trial}: Time Taken = {time_taken} seconds.")
+    print(f"TRIAL {trial}: Time Taken = {time_taken} seconds, total = {total}")
 
     return time_taken
     

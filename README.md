@@ -24,9 +24,9 @@ Additionally, simply running `make` will compile, run the executables + Python s
 
 C Cache Benchmark (Avg. of 5 Trials):
 ```
-Sequential Access: Sum = 4719430, Time taken = 0.0004057000000000 seconds
-Strided Access: Sum = 4719430, Time taken = 0.0020947000000000 seconds
-Random Access: Sum = 4717321, Time taken = 0.0647873000000000 seconds
+Sequential Access Average: Time taken = 0.0005472799530253 seconds
+Strided Access Average: Time taken = 0.0023689002264291 seconds
+Random Access Average: Time taken = 0.0533745177090168 seconds
 ```
 
 C Loop Benchmark (Avg. of 5 Trials):

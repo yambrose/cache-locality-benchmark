@@ -34,5 +34,5 @@ int main() {
         totalTimeTaken += PerformArithmetic(trial);
     }
 
-    printf("C Loop Average: %16f seconds", totalTimeTaken);
+    printf("C Loop Average: %.16f seconds\n", totalTimeTaken / TRIALS);
 }
