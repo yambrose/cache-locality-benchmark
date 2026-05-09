@@ -1,3 +1,5 @@
+#define TRIALS 5;
+
 #include <stdio.h>  
 #include <stdlib.h> 
 #include <stdint.h> 
@@ -7,7 +9,7 @@ long long length = 2048 * 2048;
 
 struct timespec startTime, endTime;
 
-void PerformArithmetic() {
+float PerformArithmetic() {
     clock_gettime(CLOCK_MONOTONIC, &startTime);
 
     long long total = 1;
@@ -17,11 +19,20 @@ void PerformArithmetic() {
 
     clock_gettime(CLOCK_MONOTONIC, &endTime);
     
-    double time_taken = (endTime.tv_sec - startTime.tv_sec) +
+    float timeTaken = (endTime.tv_sec - startTime.tv_sec) +
                     (endTime.tv_nsec - startTime.tv_nsec) / 1e9;
-    printf("Time taken = %.16f seconds, total = %lld\n",  time_taken, total);
+    printf("Time taken = %.16f seconds, total = %lld\n",  timeTaken, total);
+
+    return timeTaken;
 }
 
 int main() {
-    PerformArithmetic();
+    float totalTimeTaken = 0.0f;
+
+    printf("RUNNING C LOOP BENCHMARK\n");
+    for (int trial = 1; trial < TRIALS+1; trial++) {
+        totalTimeTaken += PerformArithmetic(trial);
+    }
+
+    printf("C Loop Average: %16f seconds", totalTimeTaken);
 }
